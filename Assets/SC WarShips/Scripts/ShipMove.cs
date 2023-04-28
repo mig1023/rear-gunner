@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipMove : MonoBehaviour
 {
     public Transform [] points;
-	public float speed = 8.0f; 
+	public float speed; 
 	public Rigidbody body;
 	
 	private byte selected;
@@ -31,9 +31,9 @@ public class ShipMove : MonoBehaviour
 				Vector3 target = points[selected].position - transform.position;
 				float step = 5.5f * Time.deltaTime;
 				
-				Vector3 direction = Vector3.RotateTowards(transform.forward, target, step, 0.0F);	
+				Vector3 direction = Vector3.RotateTowards(transform.forward, target, step, 0.0f);	
 				direction.y = 0;		
-				transform.rotation = Quaternion.LookRotation(direction);
+				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * 5f);
 			}
 			else
 			{
