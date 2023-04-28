@@ -9,11 +9,11 @@ public class ShipMove : MonoBehaviour
 	public Rigidbody body;
 	
 	private byte selected;
-	private float inputValue;
+	private float acceleration;
 	
     void Start()
     {
-		inputValue = 0f;
+		acceleration = 0f;
     }
 
     void Update()
@@ -21,13 +21,12 @@ public class ShipMove : MonoBehaviour
         if (points.Length > 0)
 		{
 			var heading = transform.position - points[selected].position;
-			
 			double distance = heading.sqrMagnitude;
-		 
+			
 			if (distance > 10)
 			{
-				if (inputValue < 1)
-					inputValue += 0.2f;
+				if (acceleration < 1)
+					acceleration += 0.01f;
 				
 				Vector3 target = points[selected].position - transform.position;
 				float step = 5.5f * Time.deltaTime;
@@ -36,28 +35,21 @@ public class ShipMove : MonoBehaviour
 				direction.y = 0;		
 				transform.rotation = Quaternion.LookRotation(direction);
 			}
-			else if (inputValue > 0)
-			{
-				inputValue -= 0.2f;
-			}
 			else
 			{
-				inputValue = 0;
-				
-				if (points.Length > 1)
-				{
-					if (selected < points.Length - 1)
-						selected += 1;
-					else
-						selected = 0;
-				}
+				if (selected < points.Length - 1)
+					selected += 1;
+				else if (acceleration > 0)
+					acceleration -= 0.02f;
+				else if (acceleration != 0)
+					acceleration = 0;
 			}
 		}
     }
 	
 	private void FixedUpdate()
 	{
-		Vector3 movement = transform.forward * inputValue * speed * Time.deltaTime;
+		Vector3 movement = transform.forward * acceleration * speed * Time.deltaTime;
 		body.MovePosition(body.position + movement);
 	}
 }
