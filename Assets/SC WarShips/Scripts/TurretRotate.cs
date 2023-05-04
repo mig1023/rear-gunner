@@ -5,25 +5,23 @@ using UnityEngine;
 public class TurretRotate : MonoBehaviour
 {
 	public Transform BoneTurret;   
-    public Transform BoneBarrelTurn;
+	public Transform BoneBarrelTurn;
 	
-	public int verticalLimithMin = -30;
-	public int verticalLimithMax = 0;
-	public int horizontalLimithMin = -30;
-	public int horizontalLimithMax = 30;
+	public int verticalLimithMin = -90;
+	public int verticalLimithMax = -15;
+	public float speed = 3;
 	
-	Vector2 rotationX = Vector2.zero;
-	Vector2 rotationY = Vector2.zero;
-	
-	public float speed = 1;
+	Vector3 rotateY = Vector2.zero;
 
 	void Update()
 	{
-		rotationX.y = Mathf.Clamp(rotationY.y - Input.GetAxis("Mouse X"), horizontalLimithMin, horizontalLimithMax);
-		BoneTurret.eulerAngles = (Vector2)rotationX * speed;
-
-		rotationY.x = Mathf.Clamp(rotationY.x - Input.GetAxis("Mouse Y"), verticalLimithMin, verticalLimithMax);
-		rotationY.y = Mathf.Clamp(rotationY.y - Input.GetAxis("Mouse X"), horizontalLimithMin, horizontalLimithMax);
-		BoneBarrelTurn.eulerAngles = (Vector2)rotationY * speed;
+		Vector3 rotateX = transform.eulerAngles;
+		rotateX.y += Input.GetAxis("Mouse X") * speed;
+		BoneTurret.rotation = Quaternion.Euler(rotateX);
+		
+		rotateY.y = rotateX.y;
+		rotateY.x += Input.GetAxis("Mouse Y") * speed;
+		rotateY.x = Mathf.Clamp(rotateY.x, verticalLimithMin, verticalLimithMax);
+		BoneBarrelTurn.rotation = Quaternion.Euler(rotateY);
 	}
 }
