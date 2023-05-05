@@ -7,6 +7,7 @@ public class TurretRotate : MonoBehaviour
 	public Transform BoneTurret;   
 	public Transform BoneBarrelTurn;
 	public GameObject shell;
+	public GameObject particleShot;  
 	
 	public int verticalLimithMin = -90;
 	public int verticalLimithMax = -15;
@@ -32,15 +33,19 @@ public class TurretRotate : MonoBehaviour
 			Transform barrel = BoneBarrelTurn.GetChild(0);
 			
 			Quaternion shellRot = Quaternion.Euler(
-				barrel.eulerAngles.x+Random.Range(-3f,3f),
-				barrel.eulerAngles.y+Random.Range(-3f,3f),
-				barrel.eulerAngles.z+Random.Range(-3f,3f));
+				barrel.eulerAngles.x+Random.Range(-3f, 3f),
+				barrel.eulerAngles.y+Random.Range(-3f, 3f),
+				barrel.eulerAngles.z+Random.Range(-3f, 3f));
 			
-			var instShell = Instantiate(shell, barrel.position, shellRot) ; 
+			var instShell = Instantiate(shell, barrel.position, shellRot); 
 			instShell.transform.localScale = new Vector3(shellSize, shellSize, shellSize);
 			float shot = shellSpeed + Random.Range(-1 * shellSpeed * 0.2f, shellSpeed * 0.2f);
 			Vector3 dir = shellRot * Vector3.up * shot;
 			instShell.GetComponent<Rigidbody>().AddForce(dir);
+			
+			var instParticleShot = Instantiate(particleShot, barrel.position, Quaternion.Euler(barrel.eulerAngles.x, barrel.eulerAngles.y, barrel.eulerAngles.z)); 
+            instParticleShot.transform.localScale = new Vector3(shellSize, shellSize, shellSize);
+            Destroy(instParticleShot, 3f); 
 		}
 	}
 }
