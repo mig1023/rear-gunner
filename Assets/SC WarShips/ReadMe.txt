@@ -1,3 +1,0 @@
-To use the asset in the HDRP renderer, create an HDRP project and import the package "package_Warships_HDRP" into it.
-To use the asset in the HDRP renderer, create an URP project and import the package "package_Warships_URP" into it.
-In order for the effects to be visible in the URP render, select the "Settings" folder and the "UniversalRP-HighQuality" file, then make the "Depth Texture" checkbox active.
