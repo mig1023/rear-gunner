@@ -7,7 +7,7 @@ public class Turret : MonoBehaviour
 	public Transform BoneTurret;   
 	public Transform BoneBarrelTurn;
 	public GameObject shell;
-	public GameObject particleShot;  
+	// public GameObject shotsFlash;  
 	
 	public int verticalLimithMin = -90;
 	public int verticalLimithMax = -15;
@@ -43,9 +43,9 @@ public class Turret : MonoBehaviour
 			Vector3 dir = shellRot * Vector3.up * shot;
 			instShell.GetComponent<Rigidbody>().AddForce(dir);
 			
-			var instParticleShot = Instantiate(particleShot, barrel.position, Quaternion.Euler(barrel.eulerAngles.x, barrel.eulerAngles.y, barrel.eulerAngles.z)); 
-            instParticleShot.transform.localScale = new Vector3(shellSize, shellSize, shellSize);
-            Destroy(instParticleShot, 3f); 
+			// var instFlash = Instantiate(shotsFlash, barrel.position, Quaternion.Euler(barrel.eulerAngles.x, barrel.eulerAngles.y, barrel.eulerAngles.z)); 
+            // instFlash.transform.localScale = new Vector3(shellSize, shellSize, shellSize);
+			// Destroy(instFlash, 3f); 
 		}
 	}
 }
