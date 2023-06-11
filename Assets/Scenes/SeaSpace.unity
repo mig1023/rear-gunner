@@ -401,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoneTurret: {fileID: 777106280}
   BoneBarrelTurn: {fileID: 1413965043}
-  shell: {fileID: 0}
+  shell: {fileID: 73616524940676149, guid: 33f68b4bb8d195948a021f15f9b47c42, type: 3}
   particleShot: {fileID: 0}
   verticalLimithMin: -90
   verticalLimithMax: -15
@@ -797,8 +797,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742467658}
-  m_LocalRotation: {x: 0.11322714, y: 0.7417506, z: 0.12941003, w: -0.6482582}
-  m_LocalPosition: {x: -30.25776, y: -0.89408493, z: -545.0438}
+  m_LocalRotation: {x: 0.3401092, y: 0.28257984, z: 0.107760765, w: -0.890428}
+  m_LocalPosition: {x: -28.966215, y: -1.164463, z: -554.2803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
