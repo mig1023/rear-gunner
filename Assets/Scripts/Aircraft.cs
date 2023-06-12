@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Aircraft : MonoBehaviour
 {
+	public int Hitpoints = 2;
+	
 	public void OnTriggerEnter(Collider collision)
 	{
-		GetComponent<Animator>().Play("Dead2");
+		Hitpoints -= 1;
+		
+		if (Hitpoints <= 0)
+		{
+			GetComponent<Move>().Dead = true;
+			GetComponent<Animator>().Play("Dead2");
+		}
 	}
 }

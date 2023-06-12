@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-	public Transform [] points;
+	public Transform[] points;
 	public float speed; 
 	public Rigidbody body;
 	
 	private byte selected;
 	private float acceleration;
+	private float falling;
+	
+	public bool Dead = false;
 	
 	void Start()
 	{
 		acceleration = 0f;
+		falling = 0f;
 	}
 	
 	void Update()
@@ -29,9 +33,14 @@ public class Move : MonoBehaviour
 					acceleration += 0.01f;
 				}
 				
+				if (Dead)
+				{
+					falling -= 0.001f;
+				}
+				
 				Vector3 target = points[selected].position - transform.position;
 				Vector3 direction = Vector3.RotateTowards(transform.forward, target, 0.1f, 0.1f);	
-				direction.y = 0;		
+				direction.y = falling;		
 				transform.rotation = Quaternion.LookRotation(direction);
 			}
 			else
