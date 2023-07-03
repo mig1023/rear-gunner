@@ -7,6 +7,7 @@ public class Move : MonoBehaviour
 	public Transform[] points;
 	public float speed; 
 	public Rigidbody body;
+	public ParticleSystem particle_Explosive;
 	
 	private byte selected;
 	private float acceleration;
@@ -58,6 +59,15 @@ public class Move : MonoBehaviour
 					acceleration = 0f;
 				}
 			}
+		}
+		
+		if ((particle_Explosive != null) && (transform.position.y <= 5))
+		{
+			var instParticle = Instantiate(particle_Explosive, transform.position, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
+			instParticle.transform.localScale = new Vector3(15,15,5);
+
+			Destroy(instParticle.gameObject, particle_Explosive.main.duration);
+			Destroy(gameObject);
 		}
 	}
 	
