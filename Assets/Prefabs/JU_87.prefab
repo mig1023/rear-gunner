@@ -444,11 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e48eb4c044e7a4dae804f8b1a3e596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 0}
   Speed: 50
   Hitpoints: 2
-  Body: {fileID: 3441925632231454799}
   ParticleExplosive: {fileID: 198656289721292014, guid: f23ebfa95252f4749a71ae4ad42521ac, type: 3}
 --- !u!1 &2613090288256363253
 GameObject:
