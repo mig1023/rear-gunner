@@ -16,12 +16,23 @@ public class Aircraft : MonoBehaviour
 		Vector3 movement = transform.forward * Speed * Time.deltaTime;
 
 		if (Dead)
+		{
 			DeadFalling(movement);
+		}
 
 		Move(movement);
 
-		if ((ParticleExplosive != null) && (transform.position.y <= 5))
-			Destruction();
+		GameObject battleship = GameObject.Find("Battleship");
+		Vector3 shipPosition = battleship.gameObject.transform.position;
+
+		if (transform.position.z > shipPosition.z)
+        {
+			Destruction(withFireworks: false);
+		}
+		else if (transform.position.y <= 5)
+        {
+			Destruction(withFireworks: true);
+		}
 	}
 
 	private void DeadFalling(Vector3 movement)
@@ -39,14 +50,18 @@ public class Aircraft : MonoBehaviour
 		body.MovePosition(body.position + movement);
 	}
 
-	private void Destruction()
+	private void Destruction(bool withFireworks)
     {
-		var instParticle = Instantiate(ParticleExplosive, transform.position,
-			Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
+		if (withFireworks)
+        {
+			var instParticle = Instantiate(ParticleExplosive, transform.position,
+				Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
 
-		instParticle.transform.localScale = new Vector3(15, 15, 5);
+			instParticle.transform.localScale = new Vector3(15, 15, 5);
 
-		Destroy(instParticle.gameObject, ParticleExplosive.main.duration);
+			Destroy(instParticle.gameObject, ParticleExplosive.main.duration);
+		}
+
 		Destroy(gameObject);
 	}
 

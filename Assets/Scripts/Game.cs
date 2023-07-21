@@ -18,11 +18,11 @@ public class Game : MonoBehaviour
     {
         GameObject battleship = GameObject.Find("Battleship");
 
-        Vector3 pos = battleship.gameObject.transform.position;
-        pos.z -= Behind;
-        pos.y += Altitude;
-        pos.x += Random.Range(-30, 30);
+        Vector3 shipPosition = battleship.gameObject.transform.position;
+        shipPosition.z -= Behind;
+        shipPosition.y += Altitude;
+        shipPosition.x += Random.Range(-30, 30);
 
-        Instantiate(Aircraft, pos, battleship.gameObject.transform.rotation);
+        Instantiate(Aircraft, shipPosition, battleship.gameObject.transform.rotation);
     }
 }
