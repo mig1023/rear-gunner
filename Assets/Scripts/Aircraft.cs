@@ -69,10 +69,17 @@ public class Aircraft : MonoBehaviour
 	{
 		Hitpoints -= 1;
 		
-		if (Hitpoints <= 0)
+		if (!Dead && (Hitpoints <= 0))
 		{
 			Dead = true;
 			GetComponent<Animator>().Play("Dead2");
+			ChangeShotdownCount();
 		}
+	}
+
+	private void ChangeShotdownCount()
+    {
+		GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+		camera.GetComponent<Game>().Shotdown += 1;
 	}
 }
