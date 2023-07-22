@@ -32,7 +32,7 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
@@ -474,9 +474,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Aircraft:
-  - {fileID: 749268814640526138, guid: 52f43ca8297d60a44a54bdedf4bca2bb, type: 3}
-  - {fileID: 749268814640526138, guid: 52f43ca8297d60a44a54bdedf4bca2bb, type: 3}
-  - {fileID: 749268814640526138, guid: 52f43ca8297d60a44a54bdedf4bca2bb, type: 3}
+  - {fileID: 2523498971835983756, guid: 631ec51476786114fa0665c5c47d8f15, type: 3}
+  - {fileID: 5075231130931565879, guid: cf1f3148bc37d9b4894378f16ec9b100, type: 3}
+  - {fileID: 1594515883305935666, guid: b247d61849e915f4da5efa81208d2708, type: 3}
   - {fileID: 749268814640526138, guid: 52f43ca8297d60a44a54bdedf4bca2bb, type: 3}
 --- !u!1 &1043015036
 GameObject:
@@ -1098,8 +1098,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796210230}
-  m_LocalRotation: {x: 0.0000000041895545, y: -0.9953962, z: 0.09584583, w: 0.00000004351015}
-  m_LocalPosition: {x: -30.04, y: 3.3099995, z: -257.88}
+  m_LocalRotation: {x: -0.0043535023, y: 0.9943312, z: 0.04508619, w: 0.096196845}
+  m_LocalPosition: {x: -32.255764, y: 3.0292683, z: -260.1497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
