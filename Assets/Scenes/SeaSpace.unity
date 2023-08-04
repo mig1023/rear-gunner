@@ -1318,7 +1318,7 @@ MonoBehaviour:
   verticalLimithMin: -90
   verticalLimithMax: -15
   speed: 3
-  shellSize: 0.45
+  shellSize: 0.12
   shellSpeed: 700
 --- !u!1 &2127857665
 GameObject:
