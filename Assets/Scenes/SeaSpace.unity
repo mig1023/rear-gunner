@@ -222,6 +222,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &525074537 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8034564675685647311, guid: 4eb6e483c6a76854d8b707b87cdabc99, type: 3}
+  m_PrefabInstance: {fileID: 2133693558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &700391530
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +665,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1243687853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5746766197748460011, guid: 4eb6e483c6a76854d8b707b87cdabc99, type: 3}
+  m_PrefabInstance: {fileID: 2133693558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1402678008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,8 +1100,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742467658}
-  m_LocalRotation: {x: -0.026423685, y: 0.91575295, z: 0.3961795, w: 0.061157}
-  m_LocalPosition: {x: -30.076906, y: -39.88521, z: -274.9706}
+  m_LocalRotation: {x: 0.23463728, y: 0.46079203, z: 0.12747937, w: -0.8463836}
+  m_LocalPosition: {x: -16.86802, y: -22.705608, z: -310.4012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1290,6 +1300,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4809387865062133762, guid: 4eb6e483c6a76854d8b707b87cdabc99, type: 3}
   m_PrefabInstance: {fileID: 2133693558}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1845053960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243687853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac3c40213bb3d2459d24249f25931e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoneTurret: {fileID: 1845053959}
+  BoneBarrelTurn: {fileID: 525074537}
+  shell: {fileID: 1457569120849376384, guid: 9a1dee9cdd827854887c43dabfbdf6ef, type: 3}
+  verticalLimithMin: -90
+  verticalLimithMax: -15
+  speed: 3
+  shellSize: 0.45
+  shellSpeed: 700
 --- !u!1 &2127857665
 GameObject:
   m_ObjectHideFlags: 0
