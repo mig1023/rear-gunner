@@ -11,6 +11,10 @@ public class Turret : MonoBehaviour
 	
 	public int verticalLimithMin;
 	public int verticalLimithMax;
+
+	public int horizontalLimithMin;
+	public int horizontalLimithMax;
+
 	public float speed;
 	public float shellSize;
 	public float shellSpeed;
@@ -21,6 +25,7 @@ public class Turret : MonoBehaviour
 	{
 		Vector3 rotateX = transform.eulerAngles;
 		rotateX.y += Input.GetAxis("Mouse X") * speed;
+		rotateX.y = Mathf.Clamp(rotateX.y, horizontalLimithMin, horizontalLimithMax);
 		BoneTurret.rotation = Quaternion.Euler(rotateX);
 		
 		rotateY.y = rotateX.y;

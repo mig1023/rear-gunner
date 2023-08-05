@@ -665,6 +665,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1018830518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018830514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc813438bbbcbc46855e115f6d0d940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 20
 --- !u!1 &1243687853 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5746766197748460011, guid: 4eb6e483c6a76854d8b707b87cdabc99, type: 3}
@@ -1100,8 +1113,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742467658}
-  m_LocalRotation: {x: 0.23463728, y: 0.46079203, z: 0.12747937, w: -0.8463836}
-  m_LocalPosition: {x: -16.86802, y: -22.705608, z: -310.4012}
+  m_LocalRotation: {x: 0.16778392, y: 0.63897794, z: 0.14528978, w: -0.7365098}
+  m_LocalPosition: {x: -16.878906, y: -22.710712, z: -310.4225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1316,10 +1329,12 @@ MonoBehaviour:
   BoneBarrelTurn: {fileID: 525074537}
   shell: {fileID: 1457569120849376384, guid: 9a1dee9cdd827854887c43dabfbdf6ef, type: 3}
   verticalLimithMin: -90
-  verticalLimithMax: -15
+  verticalLimithMax: 0
+  horizontalLimithMin: 40
+  horizontalLimithMax: 330
   speed: 3
   shellSize: 0.12
-  shellSpeed: 700
+  shellSpeed: 1500
 --- !u!1 &2127857665
 GameObject:
   m_ObjectHideFlags: 0
