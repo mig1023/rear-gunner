@@ -24,14 +24,14 @@ public class Game : MonoBehaviour
 
     private void Spawning()
     {
-        GameObject aircraft = GameObject.Find("Aircraft");
+        GameObject battleship = GameObject.Find("Battleship");
 
-        Vector3 airPosition = aircraft.gameObject.transform.position;
-        airPosition.z -= Behind;
-        airPosition.y += Altitude;
-        airPosition.x += Random.Range(-30, 30);
+        Vector3 shipPosition = battleship.gameObject.transform.position;
+        shipPosition.z -= Behind;
+        shipPosition.y += Altitude;
+        shipPosition.x += Random.Range(-30, 30);
 
         int typeAircraft = Random.Range(0, Aircraft.Length);
-        Instantiate(Aircraft[typeAircraft], airPosition, aircraft.gameObject.transform.rotation);
+        Instantiate(Aircraft[typeAircraft], shipPosition, battleship.gameObject.transform.rotation);
     }
 }

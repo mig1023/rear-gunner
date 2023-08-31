@@ -20,12 +20,12 @@ public class Aircraft : MonoBehaviour
 			DeadFalling(movement);
 		}
 
-		GameObject aircraft = GameObject.Find("Aircraft");
-		Vector3 airPosition = aircraft.gameObject.transform.position;
+		GameObject battleship = GameObject.Find("Battleship");
+		Vector3 shipPosition = battleship.gameObject.transform.position;
 
 		Move(movement);
 
-		if (transform.position.z > airPosition.z)
+		if (transform.position.z > shipPosition.z)
         {
 			Destruction(withFireworks: false);
 		}
